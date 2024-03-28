@@ -1,3 +1,11 @@
+# Description
+
+Online Clothes Store
+
+# Team
+1 Kim Almas
+2 Oralkhan Askar
+
 # OnlineStore
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
