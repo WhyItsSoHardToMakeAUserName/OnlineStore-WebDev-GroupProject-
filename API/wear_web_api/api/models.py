@@ -11,7 +11,7 @@ class Size(models.Model):
         return self.size
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=25)
 
     class Meta:
         verbose_name = 'Category'
