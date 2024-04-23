@@ -38,10 +38,10 @@ class TopSerializer(serializers.ModelSerializer):
 class PantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pant
-        field = ('name', 'brand', 'price', 'image_url', 'gender', 'category', 'sizes')
+        fields = '__all__'
 
 class ShoeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shoe
-        field = ('name', 'brand', 'price', 'image_url', 'gender', 'category', 'sizes')
+        fields = '__all__'
 
