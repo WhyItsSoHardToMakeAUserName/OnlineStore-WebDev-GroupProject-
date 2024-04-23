@@ -33,7 +33,6 @@ class Gender(models.Model):
 class Hat(models.Model):
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
-    color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
@@ -50,7 +49,6 @@ class Hat(models.Model):
 class Top(models.Model):
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
-    color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
@@ -68,7 +66,6 @@ class Top(models.Model):
 class Shoe(models.Model):
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
-    color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
@@ -85,7 +82,6 @@ class Shoe(models.Model):
 class Pant(models.Model):
     name = models.CharField(max_length=255)
     brand = models.CharField(max_length=255)
-    color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE)

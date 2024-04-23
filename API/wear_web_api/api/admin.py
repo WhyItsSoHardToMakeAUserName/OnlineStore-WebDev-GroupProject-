@@ -15,17 +15,17 @@ class GenderAdmin(admin.ModelAdmin):
 
 @admin.register(Hat)
 class HatAdmin(admin.ModelAdmin):
-    list_display = ['name', 'brand', 'color', 'price', 'gender', 'category']
+    list_display = ['name', 'brand', 'price', 'gender', 'category']
 
 @admin.register(Top)
 class TopAdmin(admin.ModelAdmin):
-    list_display = ['name', 'brand', 'color', 'price', 'gender', 'category']
+    list_display = ['name', 'brand', 'price', 'gender', 'category']
 
 @admin.register(Shoe)
 class ShoeAdmin(admin.ModelAdmin):
-    list_display = ['name', 'brand', 'color', 'price', 'gender', 'category']
+    list_display = ['name', 'brand', 'price', 'gender', 'category']
 
 @admin.register(Pant)
 class PantAdmin(admin.ModelAdmin):
-    list_display = ['name', 'brand', 'color', 'price', 'gender', 'category']
+    list_display = ['name', 'brand', 'price', 'gender', 'category']
 
