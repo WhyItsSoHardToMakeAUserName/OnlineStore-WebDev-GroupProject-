@@ -19,6 +19,16 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
+    
+class Gender(models.Model):
+    name = models.CharField(max_length=25)
+
+    class Meta:
+        verbose_name = 'Gender'
+        verbose_name_plural = 'Genders'
+    
+    def __str__(self):
+        return self.name
 
 class Hat(models.Model):
     name = models.CharField(max_length=255)
@@ -26,7 +36,7 @@ class Hat(models.Model):
     color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
-    gender = models.CharField(max_length=20)
+    gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sizes = models.ManyToManyField(Size)
 
@@ -43,7 +53,7 @@ class Top(models.Model):
     color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
-    gender = models.CharField(max_length=20)
+    gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sizes = models.ManyToManyField(Size)
 
@@ -61,7 +71,7 @@ class Shoe(models.Model):
     color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
-    gender = models.CharField(max_length=20)
+    gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sizes = models.ManyToManyField(Size)
 
@@ -78,7 +88,7 @@ class Pant(models.Model):
     color = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     image_url = models.TextField(null=True)
-    gender = models.CharField(max_length=20)
+    gender = models.ForeignKey(Gender, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sizes = models.ManyToManyField(Size)
     
