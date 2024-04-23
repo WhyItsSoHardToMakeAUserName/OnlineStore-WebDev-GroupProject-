@@ -33,7 +33,7 @@ class HatSerializer(serializers.ModelSerializer):
 class TopSerializer(serializers.ModelSerializer):
     class Meta:
         model = Top
-        field = ('name', 'brand', 'price', 'image_url', 'gender', 'category', 'sizes')
+        fields = '__all__'
         
 class PantSerializer(serializers.ModelSerializer):
     class Meta:

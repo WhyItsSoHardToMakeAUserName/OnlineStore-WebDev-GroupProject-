@@ -4,6 +4,7 @@ from django.urls import path
 from .views_category import category_list, category_details
 from .views_size import size_list, size_details
 from .views_hat import HatCRUD, HatsCRUD
+from .views_top import TopCRUD, TopsCRUD
 
 urlpatterns = [
     path('categories/', category_list),
@@ -13,4 +14,7 @@ urlpatterns = [
 
     path('hats/', HatsCRUD.as_view()),
     path('hats/<int:id>/', HatCRUD.as_view()),
+
+    path('tops/', TopsCRUD.as_view()),
+    path('tops/<int:id>/', TopCRUD.as_view()),    
 ]
