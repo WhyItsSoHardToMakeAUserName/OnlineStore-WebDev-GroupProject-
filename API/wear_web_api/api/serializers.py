@@ -21,7 +21,7 @@ class SizeSerializer(serializers.Serializer):
         return Size.objects.create(**validated_data)
     
     def update(self, instance, validated_data):
-        instance.name = validated_data.get('name', instance.name)
+        instance.size = validated_data.get('size', instance.size)
         instance.save()
         return instance
 
