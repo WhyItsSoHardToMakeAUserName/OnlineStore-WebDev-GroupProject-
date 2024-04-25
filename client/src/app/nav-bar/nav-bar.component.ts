@@ -13,9 +13,13 @@ import { faCircleXmark, faCartShopping,faCircleUser,faBell,faChevronDown,faMagni
 export class NavBarComponent {
   constructor(private router: Router ){}
 
-RedirectToMain() {
-  this.router.navigate(['/']);
-}
+  RedirectToMain() {
+    this.router.navigate(['/']);
+  }
+
+  RedirectToLogin() {
+    this.router.navigate(['login'])
+  }
   faCircleXmark  = faCircleXmark;
   faCartShooping = faCartShopping;
   faCircleUser = faCircleUser;
