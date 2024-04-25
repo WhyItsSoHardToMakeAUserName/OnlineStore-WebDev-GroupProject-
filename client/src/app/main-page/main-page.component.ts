@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component} from '@angular/core';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { ShopFeedComponent } from '../shop-feed/shop-feed.component';
 @Component({
