@@ -37,6 +37,13 @@ export class NavBarComponent implements OnInit {
     console.log("redirecting profile")
     this.router.navigate(['profile'])
   }
+
+  Logout() {
+    console.log("logging out")
+    this.accountService.logout()
+    this.router.navigate(['login'])
+  }
+
   fashop = faShop;
   faCircleXmark  = faCircleXmark;
   faCartShooping = faCartShopping;
