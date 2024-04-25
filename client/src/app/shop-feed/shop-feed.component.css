@@ -9,12 +9,13 @@ p{
 }
 .container {
     columns: 2;
-    width: 600px;
+    width: 700px;
     margin: 0 auto;
     padding: 10px 10px;
 }
 button{
-    padding: 0;
+    padding: 0 10px;
+    margin: 10px 0;
 }
   
 .product-card {
@@ -32,7 +33,7 @@ button{
 .product-hover {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10px;
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0);

@@ -56,7 +56,7 @@ export class ShopFeedComponent {
 	
   columns: number = 1;
   div_width:number = 600;
-  img_width:number = 250;
+  img_width:number = 270;
 
 
 	@HostListener('window:resize', ['$event'])
