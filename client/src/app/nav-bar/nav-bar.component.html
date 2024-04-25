@@ -1,5 +1,7 @@
 <div class="container">
-    <fa-icon [icon]="faCircleXmark" size="2xl" style="color: rgb(209, 132, 132);"></fa-icon>
+    <button (click)="Logout()">
+        <fa-icon [icon]="faCircleXmark" size="2xl" style="color: rgb(209, 132, 132);"></fa-icon>
+    </button>
     <button class="main-button" (click)="RedirectToMain()"> 
            <fa-icon [icon]="fashop" size="2xl" style="color: rgb(49, 185, 163);"></fa-icon>
     </button>
