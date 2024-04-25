@@ -33,7 +33,7 @@ fa-icon{
 fa-icon:hover{
     background-color: rgb(215, 215, 215);
 }
-button{
+.main-button{
     text-decoration: none;
     background-color: rgb(132, 162, 246);
     border: none;
@@ -46,7 +46,12 @@ button{
     transition: 0.15s;
     margin-right: 5px;
 }
-button:hover{
+.main-button:hover{
     background-color: rgb(110, 135, 204);
     transition: 0.15s;
+}
+
+button{
+    background-color: white;
+    border: none;
 }
