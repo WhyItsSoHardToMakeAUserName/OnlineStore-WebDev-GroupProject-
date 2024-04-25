@@ -9,11 +9,16 @@
                 <p>other details Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum soluta, natus praesentium consequuntur aliquid tenetur doloremque facere pariatur sequi nihil hic minima veritatis placeat qui expedita iusto officia reprehenderit rerum.</p>
             </div>
         </div>
-        <div class="Product-Creator">
-            <form [formGroup]="productForm" (ngSubmit)="onSubmitTop()">
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="Product-Creator">
                 <div class="buttons">
-                    <button type="submit" class="create-btn"> Create new Tops</button>
-                    
+                    <button type="submit" class="create-btn" (click)="onSelectProduct('tops')"> Create new Tops</button>
+                    <button type="submit" class="create-btn" (click)="onSelectProduct('pants')"> Create new Pants</button>
+                    <button type="submit" class="create-btn" (click)="onSelectProduct('shoes')"> Create new Shoes</button>
+                    <button type="submit" class="create-btn" (click)="onSelectProduct('hats')"> Create new Hats</button>
+                </div>
+        
+                <div *ngIf="selectedProduct" class="form">
                     <input type="text" formControlName="name" placeholder="Name">
                     <input type="text" formControlName="brand" placeholder="Brand">
                     <input type="number" formControlName="price" placeholder="Price">
@@ -31,74 +36,9 @@
                         <option *ngFor="let size of availableSizes" [value]="size.id">{{ size.size }}</option>
                     </select>
                 </div>
-            </form>
-            <form [formGroup]="productForm" (ngSubmit)="onSubmitPants()">
-                <div class="buttons">
-                    <button type="submit" class="create-btn"> Create new Pants</button>
-                    
-                    <input type="text" formControlName="name" placeholder="Name">
-                    <input type="text" formControlName="brand" placeholder="Brand">
-                    <input type="number" formControlName="price" placeholder="Price">
-                    <input type="text" formControlName="image_url" placeholder="Image URL">
-                    <p>Gender</p>
-                    <select formControlName="gender" placeholder="Gender">
-                        <option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</option>
-                    </select>
-                    <p>Category</p>
-                    <select formControlName="category" >
-                        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-                    </select>
-                    <p>Sizes</p>
-                    <select formControlName="sizes" multiple>
-                        <option *ngFor="let size of availableSizes" [value]="size.id">{{ size.size }}</option>
-                    </select>
-                </div>
-            </form>
-            <form [formGroup]="productForm" (ngSubmit)="onSubmitShoes()">
-                <div class="buttons">
-                    <button type="submit" class="create-btn"> Create new Shoes</button>
-                    
-                    <input type="text" formControlName="name" placeholder="Name">
-                    <input type="text" formControlName="brand" placeholder="Brand">
-                    <input type="number" formControlName="price" placeholder="Price">
-                    <input type="text" formControlName="image_url" placeholder="Image URL">
-                    <p>Gender</p>
-                    <select formControlName="gender" placeholder="Gender">
-                        <option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</option>
-                    </select>
-                    <p>Category</p>
-                    <select formControlName="category" >
-                        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-                    </select>
-                    <p>Sizes</p>
-                    <select formControlName="sizes" multiple>
-                        <option *ngFor="let size of availableSizes" [value]="size.id">{{ size.size }}</option>
-                    </select>
-                </div>
-            </form>
-            <form [formGroup]="productForm" (ngSubmit)="onSubmitHats()">
-                <div class="buttons">
-                    <button type="submit" class="create-btn"> Create new Hats</button>
-                    
-                    <input type="text" formControlName="name" placeholder="Name">
-                    <input type="text" formControlName="brand" placeholder="Brand">
-                    <input type="number" formControlName="price" placeholder="Price">
-                    <input type="text" formControlName="image_url" placeholder="Image URL">
-                    <p>Gender</p>
-                    <select formControlName="gender" placeholder="Gender">
-                        <option *ngFor="let gender of genders" [value]="gender.id">{{ gender.name }}</option>
-                    </select>
-                    <p>Category</p>
-                    <select formControlName="category" >
-                        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-                    </select>
-                    <p>Sizes</p>
-                    <select formControlName="sizes" multiple>
-                        <option *ngFor="let size of availableSizes" [value]="size.id">{{ size.size }}</option>
-                    </select>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
+        
         
         
     </div>

@@ -49,32 +49,26 @@ button{
 }
 
 .buttons {
-    margin-bottom: 15px;
-    width: 100%;
+margin: 0 ;
+display: flex;
+align-items: center;
 }
 
-.buttons input,
-.buttons select {
-    width: 100%;
+input , select{
+    width: 290px;
     padding: 10px;
     margin: 5px 0;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 18px;
 }
-.Product-Creator {
+.Product-Creator{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 50%;
 }
 
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.form-column {
-    flex: 1;
-    margin: 0 10px;
+.form{
+    width: 50%;
 }

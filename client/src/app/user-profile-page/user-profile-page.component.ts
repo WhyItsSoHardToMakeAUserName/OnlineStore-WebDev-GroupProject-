@@ -26,73 +26,70 @@ export class UserProfilePageComponent {
   genders: any[] = [{id:0,name:"None"},{id:1,name:"Male"},{id:2,name:"Female"}];
   categories: any[] = []; 
   availableSizes: any[] = [];
+  selectedProduct: string = 'hats';
 
   constructor(private fb: FormBuilder, private http: HttpClient,private ProductsService:ProductsService) { }
 
   ngOnInit(): void {
     this.ProductsService.getCategories().subscribe(data=>{
       this.categories = this.categories.concat(data);
-      console.log(data);
     });
     this.ProductsService.getSizes().subscribe(data=>{
       this.availableSizes = this.availableSizes.concat(data);
-      console.log(data);
     });
   }
+  onSelectProduct(productType: string): void {
+    this.selectedProduct = productType;
+    // You can optionally reset the form here
+    
+  }
 
-  onSubmitTop() {
+  onSubmit(): void {
     console.log(this.productForm)
-      this.ProductsService.onCreateNewProductSubmitTop(this.productForm).subscribe(
-        response => {
-          console.log('Product created successfully:', response);
-          // Optionally reset the form after successful submission
-          // this.productForm.reset();
-        },
-        error => {
-          console.error('Error creating product:', error);
-        }
-      );
-    }
-  onSubmitShoes() {
-    console.log(this.productForm)
-      this.ProductsService.onCreateNewProductSubmitShoes(this.productForm).subscribe(
-        response => {
-          console.log('Product created successfully:', response);
-          // Optionally reset the form after successful submission
-          // this.productForm.reset();
-        },
-        error => {
-          console.error('Error creating product:', error);
-        }
-      );
-    }
-  onSubmitHats() {
-    console.log(this.productForm)
-      this.ProductsService.onCreateNewProductSubmitHats(this.productForm).subscribe(
-        response => {
-          console.log('Product created successfully:', response);
-          // Optionally reset the form after successful submission
-          // this.productForm.reset();
-        },
-        error => {
-          console.error('Error creating product:', error);
-        }
-      );
-    }
-  onSubmitPants() {
-    console.log(this.productForm)
-      this.ProductsService.onCreateNewProductSubmitPants(this.productForm).subscribe(
-        response => {
-          console.log('Product created successfully:', response);
-          // Optionally reset the form after successful submission
-          // this.productForm.reset();
-        },
-        error => {
-          console.error('Error creating product:', error);
-        }
-      );
-    }
-
-  
-  
+      const productData = this.productForm;
+      console.log(productData);
+      // this.productForm.reset();
+      switch (this.selectedProduct) {
+        case 'tops':
+          this.ProductsService.onCreateNewProductSubmitTop(productData).subscribe(
+            response => {
+              console.log('Product created successfully:', response);
+            },
+            error => {
+              console.error('Error creating product:', error);
+            }
+          );
+          break;
+        case 'pants':
+          this.ProductsService.onCreateNewProductSubmitPants(productData).subscribe(
+            response => {
+              console.log('Product created successfully:', response);
+            },
+            error => {
+              console.error('Error creating product:', error);
+            }
+          );          break;
+        case 'shoes':
+          this.ProductsService.onCreateNewProductSubmitShoes(productData).subscribe(
+            response => {
+              console.log('Product created successfully:', response);
+            },
+            error => {
+              console.error('Error creating product:', error);
+            }
+          );          break;
+        case 'hats':
+          this.ProductsService.onCreateNewProductSubmitHats(productData).subscribe(
+            response => {
+              console.log('Product created successfully:', response);
+            },
+            error => {
+              console.error('Error creating product:', error);
+            }
+          );          break;
+        default:
+          break;
+      }
+    
+  }
 }
