@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HttpClient } from '@angular/common/http';
 import {ProductsService} from '../__services/products.service';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../__services/user.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './user-profile-page.component.css'
 })
 export class UserProfilePageComponent {
+  username: string | null = null;
   productForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
     brand: ['', Validators.required],
@@ -28,7 +30,10 @@ export class UserProfilePageComponent {
   availableSizes: any[] = [];
   selectedProduct: string = 'hats';
 
-  constructor(private fb: FormBuilder, private http: HttpClient,private ProductsService:ProductsService) { }
+  constructor(private fb: FormBuilder, private http: HttpClient,private ProductsService:ProductsService, private userService: UserService) {
+    this.username = this.userService.getUsername();
+    console.log(this.username);
+   }
 
   ngOnInit(): void {
     this.ProductsService.getCategories().subscribe(data=>{
