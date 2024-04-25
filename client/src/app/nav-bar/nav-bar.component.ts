@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircleXmark, faCartShopping,faCircleUser,faBell,faChevronDown,faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faCartShopping,faCircleUser,faBell,faChevronDown,faMagnifyingGlass,faShop} from '@fortawesome/free-solid-svg-icons';
 import { AccountService } from '../__services/account.service';
 import { CommonModule } from '@angular/common';
 
@@ -37,6 +37,7 @@ export class NavBarComponent implements OnInit {
     console.log("redirecting profile")
     this.router.navigate(['profile'])
   }
+  fashop = faShop;
   faCircleXmark  = faCircleXmark;
   faCartShooping = faCartShopping;
   faCircleUser = faCircleUser;

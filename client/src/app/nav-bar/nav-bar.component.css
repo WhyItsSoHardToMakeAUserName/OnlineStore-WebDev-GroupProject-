@@ -35,20 +35,8 @@ fa-icon:hover{
 }
 .main-button{
     text-decoration: none;
-    background-color: rgb(132, 162, 246);
+    background-color: white;
     border: none;
-    height: 40px;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: 400;
-    padding: 0 20px;
-    color: white;
-    transition: 0.15s;
-    margin-right: 5px;
-}
-.main-button:hover{
-    background-color: rgb(110, 135, 204);
-    transition: 0.15s;
 }
 
 button{
